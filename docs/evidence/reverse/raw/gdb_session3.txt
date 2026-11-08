@@ -1,0 +1,40 @@
+
+### SESION 3: clave candidata FDSI-REVERSE-2026
+Breakpoint 1 at 0x4011b9: file /mnt/data/reverse_fsi_lab/crackme_level2.c, line 15.
+Breakpoint 2 at 0x4011e7: file /mnt/data/reverse_fsi_lab/crackme_level2.c, line 18.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+i= 0  input=0x46 'F'  k[i&3]=0x23  ->  transformado=0x65  expected=0x65
+i= 1  input=0x44 'D'  k[i&3]=0x51  ->  transformado=0x15  expected=0x15
+i= 2  input=0x53 'S'  k[i&3]=0x17  ->  transformado=0x44  expected=0x44
+i= 3  input=0x49 'I'  k[i&3]=0x6a  ->  transformado=0x23  expected=0x23
+i= 4  input=0x2d '-'  k[i&3]=0x23  ->  transformado=0x0e  expected=0x0e
+i= 5  input=0x52 'R'  k[i&3]=0x51  ->  transformado=0x03  expected=0x03
+i= 6  input=0x45 'E'  k[i&3]=0x17  ->  transformado=0x52  expected=0x52
+i= 7  input=0x56 'V'  k[i&3]=0x6a  ->  transformado=0x3c  expected=0x3c
+i= 8  input=0x45 'E'  k[i&3]=0x23  ->  transformado=0x66  expected=0x66
+i= 9  input=0x52 'R'  k[i&3]=0x51  ->  transformado=0x03  expected=0x03
+i=10  input=0x53 'S'  k[i&3]=0x17  ->  transformado=0x44  expected=0x44
+i=11  input=0x45 'E'  k[i&3]=0x6a  ->  transformado=0x2f  expected=0x2f
+i=12  input=0x2d '-'  k[i&3]=0x23  ->  transformado=0x0e  expected=0x0e
+i=13  input=0x32 '2'  k[i&3]=0x51  ->  transformado=0x63  expected=0x63
+i=14  input=0x30 '0'  k[i&3]=0x17  ->  transformado=0x27  expected=0x27
+i=15  input=0x32 '2'  k[i&3]=0x6a  ->  transformado=0x58  expected=0x58
+i=16  input=0x36 '6'  k[i&3]=0x23  ->  transformado=0x15  expected=0x15
+
+Breakpoint 2, validate_key (candidate=0x7fffffff6eb0 "FDSI-REVERSE-2026") at /mnt/data/reverse_fsi_lab/crackme_level2.c:18
+warning: 18	/mnt/data/reverse_fsi_lab/crackme_level2.c: No such file or directory
+
+--- fin del bucle: acumulador score [rbp-0x4] ---
+0x7fffffff63bc:	0x00000000
+0x00000000004012d2 in main (argc=2, argv=0x7fffffff6508) at /mnt/data/reverse_fsi_lab/crackme_level2.c:36
+36	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+Value returned is $1 = 1
+
+--- valor de retorno de validate_key (eax) ---
+eax            0x1                 1
+=== FDSI CrackMe Level 2 ===
+Hint: static + dynamic analysis.
+License accepted.
+FLAG{ghidra_plus_gdb}
+[Inferior 1 (process 2636) exited normally]

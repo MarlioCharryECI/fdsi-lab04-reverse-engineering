@@ -1,0 +1,9 @@
+# Los scripts se ejecutan en Linux: forzar LF aunque se clone en Windows
+*.sh    text eol=lf
+*.gdb   text eol=lf
+*.py    text eol=lf
+*.java  text eol=lf
+
+# Binarios ELF y capturas: nunca convertir finales de línea
+binaries/** binary
+*.png       binary

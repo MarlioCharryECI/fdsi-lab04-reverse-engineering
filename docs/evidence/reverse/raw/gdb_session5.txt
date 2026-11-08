@@ -1,0 +1,30 @@
+
+### SESION 5 (Boss): binario stripped, sin nombres
+All functions matching regular expression "validate":
+Breakpoint 1 at 0x401156
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, 0x0000000000401156 in ?? ()
+
+--- primeras instrucciones de FUN_00401156 (sin simbolo) ---
+=> 0x401156:	push   rbp
+   0x401157:	mov    rbp,rsp
+   0x40115a:	sub    rsp,0x30
+   0x40115e:	mov    QWORD PTR [rbp-0x28],rdi
+   0x401162:	mov    QWORD PTR [rbp-0x18],0x11
+   0x40116a:	mov    rax,QWORD PTR [rbp-0x28]
+   0x40116e:	mov    rdi,rax
+   0x401171:	call   0x401050 <strlen@plt>
+   0x401176:	cmp    QWORD PTR [rbp-0x18],rax
+   0x40117a:	je     0x401183
+   0x40117c:	mov    eax,0x0
+   0x401181:	jmp    0x4011f1
+0x7fffffff6ea7:	"FDSI-REVERSE-2026"
+0x00000000004012d2 in ?? ()
+eax            0x1                 1
+=== FDSI CrackMe Level 2 ===
+Hint: static + dynamic analysis.
+License accepted.
+FLAG{ghidra_plus_gdb}
+[Inferior 1 (process 2650) exited normally]

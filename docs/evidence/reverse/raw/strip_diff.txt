@@ -1,0 +1,41 @@
+===== nm =====
+--- crackme_level2
+lineas de nm: 35
+0000000000403e08 d _DYNAMIC
+0000000000403fe8 d _GLOBAL_OFFSET_TABLE_
+0000000000402000 R _IO_stdin_used
+--- crackme_level2_stripped
+lineas de nm: 1
+nm: crackme_level2_stripped: no symbols
+
+===== Secciones presentes solo en crackme_level2 =====
+4,9d3
+< .debug_abbrev
+< .debug_aranges
+< .debug_info
+< .debug_line
+< .debug_line_str
+< .debug_str
+33,34d26
+< .strtab
+< .symtab
+
+===== Tamaño =====
+-rwxr-xr-x 1 root root 18200 Nov  8 15:46 crackme_level2
+-rwxr-xr-x 1 root root 14424 Nov  8 15:46 crackme_level2_stripped
+
+===== .text y .rodata idénticos? =====
+.text  level2=85bb722144d6faa2  stripped=85bb722144d6faa2
+.rodata  level2=631bd26a5325d925  stripped=631bd26a5325d925
+
+===== Símbolos dinámicos (sobreviven al strip: los necesita el loader) =====
+                 w __gmon_start__
+                 U __libc_start_main@GLIBC_2.34
+                 U printf@GLIBC_2.2.5
+                 U putchar@GLIBC_2.2.5
+                 U puts@GLIBC_2.2.5
+                 U strlen@GLIBC_2.2.5
+
+===== Strings de depuración que desaparecen =====
+level2:   8
+stripped: 0

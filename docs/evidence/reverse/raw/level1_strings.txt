@@ -1,0 +1,101 @@
+    394 /lib64/ld-linux-x86-64.so.2
+    47e putchar
+    486 __libc_start_main
+    498 printf
+    49f strcmp
+    4a6 libc.so.6
+    4b0 GLIBC_2.34
+    4bb GLIBC_2.2.5
+    4c7 __gmon_start__
+   10b5 H=0@@
+   1164 !).(H
+   1186 ,3>?49?'H
+   2004 REDTEAM-101
+   2010 === FDSI CrackMe Level 1 ===
+   202d Uso: %s <password>
+   2041 Access granted.
+   2051 Access denied.
+   210f ;*3$"
+   3030 GCC: (Debian 14.2.0-19) 14.2.0
+   33ee password
+   33f7 putchar
+   33ff size_t
+   340b long unsigned int
+   341d unsigned char
+   3430 GNU C17 14.2.0 -mtune=generic -march=x86-64 -g -O0 -fno-inline -fasynchronous-unwind-tables
+   348c long int
+   3495 strcmp
+   34a1 print_flag
+   34ac short unsigned int
+   34bf printf
+   34c6 short int
+   34d5 /mnt/data/reverse_fsi_lab/crackme_level1.c
+   3500 /home/oai
+   350a /mnt/data/reverse_fsi_lab
+   3524 /usr/include
+   3531 /usr/lib/gcc/x86_64-linux-gnu/14/include
+   355a string.h
+   3563 stdio.h
+   356b stddef.h
+   3909 crt1.o
+   3910 __abi_tag
+   391a crtstuff.c
+   3925 deregister_tm_clones
+   393a __do_global_dtors_aux
+   3950 completed.0
+   395c __do_global_dtors_aux_fini_array_entry
+   3983 frame_dummy
+   398f __frame_dummy_init_array_entry
+   39ae crackme_level1.c
+   39bf print_flag
+   39ca __FRAME_END__
+   39d8 _DYNAMIC
+   39e1 __GNU_EH_FRAME_HDR
+   39f4 _GLOBAL_OFFSET_TABLE_
+   3a0a putchar@GLIBC_2.2.5
+   3a1e __libc_start_main@GLIBC_2.34
+   3a3b puts@GLIBC_2.2.5
+   3a4c _edata
+   3a53 _fini
+   3a59 printf@GLIBC_2.2.5
+   3a6c __data_start
+   3a79 strcmp@GLIBC_2.2.5
+   3a8c __gmon_start__
+   3a9b __dso_handle
+   3aa8 _IO_stdin_used
+   3abc _dl_relocate_static_pie
+   3ad4 __bss_start
+   3ae5 __TMC_END__
+   3af1 _init
+   3af8 .symtab
+   3b00 .strtab
+   3b08 .shstrtab
+   3b12 .note.gnu.property
+   3b25 .note.gnu.build-id
+   3b38 .interp
+   3b40 .gnu.hash
+   3b4a .dynsym
+   3b52 .dynstr
+   3b5a .gnu.version
+   3b67 .gnu.version_r
+   3b76 .rela.dyn
+   3b80 .rela.plt
+   3b8a .init
+   3b90 .text
+   3b96 .fini
+   3b9c .rodata
+   3ba4 .eh_frame_hdr
+   3bb2 .eh_frame
+   3bbc .note.ABI-tag
+   3bca .init_array
+   3bd6 .fini_array
+   3be2 .dynamic
+   3bf0 .got.plt
+   3bf9 .data
+   3c04 .comment
+   3c0d .debug_aranges
+   3c1c .debug_info
+   3c28 .debug_abbrev
+   3c36 .debug_line
+   3c42 .debug_str
+   3c4d .debug_line_str

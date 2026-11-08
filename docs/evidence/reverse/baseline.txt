@@ -1,0 +1,266 @@
+# FDSI · Lab 04 Parte 2 · Baseline forense
+# Generado: 2026-11-08T21:00:12Z | Host: Linux 6.18.44-fc-v310 x86_64
+# Herramientas: file-5.45 | GNU readelf (GNU Binutils for Ubuntu) 2.42 | GNU gdb (Ubuntu 15.1-1ubuntu1~24.04.1) 15.1
+
+===== file =====
+crackme_level1:          ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=01c8816fe4b791d9ded9a73e62f8f443464716ba, for GNU/Linux 3.2.0, with debug_info, not stripped
+crackme_level2:          ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=3eb5b89d4b93c6773577b448cd1cc98400e2196b, for GNU/Linux 3.2.0, with debug_info, not stripped
+crackme_level2_stripped: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=df25a1fa020d404f3512421bfcf8c89b417e8554, for GNU/Linux 3.2.0, stripped
+
+===== sha256sum =====
+61e980febe84b1003b5a3b641468e915b984f7fdd835be9828af54233f88c68c  crackme_level1
+8dc5931dfbf74d7371de9ca9ed8cc57bfe0af4521346202dcd1c701dd8b6f4e5  crackme_level2
+c8e638741272a87ee3b30fe8878898c1aa977e6a879a1ec0b271034b5bb9aed3  crackme_level2_stripped
+
+===== Verificación contra hashes publicados en la guía =====
+crackme_level1: OK
+crackme_level2: OK
+crackme_level2_stripped: OK
+
+===== ls -l =====
+-rwxr-xr-x 1 root root 17760 Nov  8 15:46 crackme_level1
+-rwxr-xr-x 1 root root 18200 Nov  8 15:46 crackme_level2
+-rwxr-xr-x 1 root root 14424 Nov  8 15:46 crackme_level2_stripped
+
+===== readelf -h crackme_level1 =====
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x401070
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          15456 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         14
+  Size of section headers:           64 (bytes)
+  Number of section headers:         36
+  Section header string table index: 35
+
+===== readelf -h crackme_level2 =====
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x401070
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          15896 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         14
+  Size of section headers:           64 (bytes)
+  Number of section headers:         36
+  Section header string table index: 35
+
+===== readelf -h crackme_level2_stripped =====
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x401070
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          12632 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         14
+  Size of section headers:           64 (bytes)
+  Number of section headers:         28
+  Section header string table index: 27
+
+===== readelf -S crackme_level1 (resumen de secciones) =====
+  [Nr] Name              Type            Address          Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            0000000000000000 000000 000000 00      0   0  0
+  [ 1] .note.gnu.property NOTE            0000000000400350 000350 000020 00   A  0   0  8
+  [ 2] .note.gnu.build-id NOTE            0000000000400370 000370 000024 00   A  0   0  4
+  [ 3] .interp           PROGBITS        0000000000400394 000394 00001c 00   A  0   0  1
+  [ 4] .gnu.hash         GNU_HASH        00000000004003b0 0003b0 00001c 00   A  5   0  8
+  [ 5] .dynsym           DYNSYM          00000000004003d0 0003d0 0000a8 18   A  6   1  8
+  [ 6] .dynstr           STRTAB          0000000000400478 000478 00005e 00   A  0   0  1
+  [ 7] .gnu.version      VERSYM          00000000004004d6 0004d6 00000e 02   A  5   0  2
+  [ 8] .gnu.version_r    VERNEED         00000000004004e8 0004e8 000030 00   A  6   1  8
+  [ 9] .rela.dyn         RELA            0000000000400518 000518 000030 18   A  5   0  8
+  [10] .rela.plt         RELA            0000000000400548 000548 000060 18  AI  5  23  8
+  [11] .init             PROGBITS        0000000000401000 001000 000017 00  AX  0   0  4
+  [12] .plt              PROGBITS        0000000000401020 001020 000050 10  AX  0   0 16
+  [13] .text             PROGBITS        0000000000401070 001070 00020b 00  AX  0   0 16
+  [14] .fini             PROGBITS        000000000040127c 00127c 000009 00  AX  0   0  4
+  [15] .rodata           PROGBITS        0000000000402000 002000 000060 00   A  0   0  4
+  [16] .eh_frame_hdr     PROGBITS        0000000000402060 002060 000034 00   A  0   0  4
+  [17] .eh_frame         PROGBITS        0000000000402098 002098 0000c4 00   A  0   0  8
+  [18] .note.ABI-tag     NOTE            000000000040215c 00215c 000020 00   A  0   0  4
+  [19] .init_array       INIT_ARRAY      0000000000403df8 002df8 000008 08  WA  0   0  8
+  [20] .fini_array       FINI_ARRAY      0000000000403e00 002e00 000008 08  WA  0   0  8
+  [21] .dynamic          DYNAMIC         0000000000403e08 002e08 0001d0 10  WA  6   0  8
+  [22] .got              PROGBITS        0000000000403fd8 002fd8 000010 08  WA  0   0  8
+  [23] .got.plt          PROGBITS        0000000000403fe8 002fe8 000038 08  WA  0   0  8
+  [24] .data             PROGBITS        0000000000404020 003020 000010 00  WA  0   0  8
+  [25] .bss              NOBITS          0000000000404030 003030 000008 00  WA  0   0  1
+  [26] .comment          PROGBITS        0000000000000000 003030 00001f 01  MS  0   0  1
+  [27] .debug_aranges    PROGBITS        0000000000000000 00304f 000030 00      0   0  1
+  [28] .debug_info       PROGBITS        0000000000000000 00307f 00019f 00      0   0  1
+  [29] .debug_abbrev     PROGBITS        0000000000000000 00321e 00010b 00      0   0  1
+  [30] .debug_line       PROGBITS        0000000000000000 003329 0000c5 00      0   0  1
+  [31] .debug_str        PROGBITS        0000000000000000 0033ee 0000e7 01  MS  0   0  1
+  [32] .debug_line_str   PROGBITS        0000000000000000 0034d5 00009f 01  MS  0   0  1
+  [33] .symtab           SYMTAB          0000000000000000 003578 000390 18     34  19  8
+  [34] .strtab           STRTAB          0000000000000000 003908 0001ef 00      0   0  1
+  [35] .shstrtab         STRTAB          0000000000000000 003af7 000166 00      0   0  1
+
+===== readelf -d crackme_level1 | NEEDED =====
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+
+===== nm crackme_level1 (símbolos definidos en .text/.rodata) =====
+0000000000403e08 d _DYNAMIC
+0000000000403fe8 d _GLOBAL_OFFSET_TABLE_
+0000000000402000 R _IO_stdin_used
+0000000000402158 r __FRAME_END__
+0000000000402060 r __GNU_EH_FRAME_HDR
+0000000000404030 D __TMC_END__
+000000000040215c r __abi_tag
+0000000000404020 D __data_start
+0000000000401120 t __do_global_dtors_aux
+0000000000403e00 d __do_global_dtors_aux_fini_array_entry
+0000000000404028 D __dso_handle
+0000000000403df8 d __frame_dummy_init_array_entry
+00000000004010a0 T _dl_relocate_static_pie
+0000000000404030 D _edata
+000000000040127c T _fini
+0000000000401000 T _init
+0000000000401070 T _start
+00000000004010b0 t deregister_tm_clones
+0000000000401150 t frame_dummy
+00000000004011d8 T main
+0000000000401156 t print_flag
+00000000004010e0 t register_tm_clones
+
+===== readelf -S crackme_level2 (resumen de secciones) =====
+  [Nr] Name              Type            Address          Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            0000000000000000 000000 000000 00      0   0  0
+  [ 1] .note.gnu.property NOTE            0000000000400350 000350 000020 00   A  0   0  8
+  [ 2] .note.gnu.build-id NOTE            0000000000400370 000370 000024 00   A  0   0  4
+  [ 3] .interp           PROGBITS        0000000000400394 000394 00001c 00   A  0   0  1
+  [ 4] .gnu.hash         GNU_HASH        00000000004003b0 0003b0 00001c 00   A  5   0  8
+  [ 5] .dynsym           DYNSYM          00000000004003d0 0003d0 0000a8 18   A  6   1  8
+  [ 6] .dynstr           STRTAB          0000000000400478 000478 00005e 00   A  0   0  1
+  [ 7] .gnu.version      VERSYM          00000000004004d6 0004d6 00000e 02   A  5   0  2
+  [ 8] .gnu.version_r    VERNEED         00000000004004e8 0004e8 000030 00   A  6   1  8
+  [ 9] .rela.dyn         RELA            0000000000400518 000518 000030 18   A  5   0  8
+  [10] .rela.plt         RELA            0000000000400548 000548 000060 18  AI  5  23  8
+  [11] .init             PROGBITS        0000000000401000 001000 000017 00  AX  0   0  4
+  [12] .plt              PROGBITS        0000000000401020 001020 000050 10  AX  0   0 16
+  [13] .text             PROGBITS        0000000000401070 001070 000297 00  AX  0   0 16
+  [14] .fini             PROGBITS        0000000000401308 001308 000009 00  AX  0   0  4
+  [15] .rodata           PROGBITS        0000000000402000 002000 0000a1 00   A  0   0 16
+  [16] .eh_frame_hdr     PROGBITS        00000000004020a4 0020a4 00003c 00   A  0   0  4
+  [17] .eh_frame         PROGBITS        00000000004020e0 0020e0 0000e4 00   A  0   0  8
+  [18] .note.ABI-tag     NOTE            00000000004021c4 0021c4 000020 00   A  0   0  4
+  [19] .init_array       INIT_ARRAY      0000000000403df8 002df8 000008 08  WA  0   0  8
+  [20] .fini_array       FINI_ARRAY      0000000000403e00 002e00 000008 08  WA  0   0  8
+  [21] .dynamic          DYNAMIC         0000000000403e08 002e08 0001d0 10  WA  6   0  8
+  [22] .got              PROGBITS        0000000000403fd8 002fd8 000010 08  WA  0   0  8
+  [23] .got.plt          PROGBITS        0000000000403fe8 002fe8 000038 08  WA  0   0  8
+  [24] .data             PROGBITS        0000000000404020 003020 000010 00  WA  0   0  8
+  [25] .bss              NOBITS          0000000000404030 003030 000008 00  WA  0   0  1
+  [26] .comment          PROGBITS        0000000000000000 003030 00001f 01  MS  0   0  1
+  [27] .debug_aranges    PROGBITS        0000000000000000 00304f 000030 00      0   0  1
+  [28] .debug_info       PROGBITS        0000000000000000 00307f 000273 00      0   0  1
+  [29] .debug_abbrev     PROGBITS        0000000000000000 0032f2 00010f 00      0   0  1
+  [30] .debug_line       PROGBITS        0000000000000000 003401 000112 00      0   0  1
+  [31] .debug_str        PROGBITS        0000000000000000 003513 000116 01  MS  0   0  1
+  [32] .debug_line_str   PROGBITS        0000000000000000 003629 00009f 01  MS  0   0  1
+  [33] .symtab           SYMTAB          0000000000000000 0036c8 0003d8 18     34  22  8
+  [34] .strtab           STRTAB          0000000000000000 003aa0 00020c 00      0   0  1
+  [35] .shstrtab         STRTAB          0000000000000000 003cac 000166 00      0   0  1
+
+===== readelf -d crackme_level2 | NEEDED =====
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+
+===== nm crackme_level2 (símbolos definidos en .text/.rodata) =====
+0000000000403e08 d _DYNAMIC
+0000000000403fe8 d _GLOBAL_OFFSET_TABLE_
+0000000000402000 R _IO_stdin_used
+00000000004021c0 r __FRAME_END__
+00000000004020a4 r __GNU_EH_FRAME_HDR
+0000000000404030 D __TMC_END__
+00000000004021c4 r __abi_tag
+0000000000404020 D __data_start
+0000000000401120 t __do_global_dtors_aux
+0000000000403e00 d __do_global_dtors_aux_fini_array_entry
+0000000000404028 D __dso_handle
+0000000000403df8 d __frame_dummy_init_array_entry
+00000000004010a0 T _dl_relocate_static_pie
+0000000000404030 D _edata
+0000000000401308 T _fini
+0000000000401000 T _init
+0000000000401070 T _start
+00000000004010b0 t deregister_tm_clones
+0000000000402090 r expected.0
+0000000000401150 t frame_dummy
+000000000040208b r k.1
+0000000000401267 T main
+00000000004010e0 t register_tm_clones
+00000000004011f3 t reveal_flag
+0000000000401156 t validate_key
+
+===== readelf -S crackme_level2_stripped (resumen de secciones) =====
+  [Nr] Name              Type            Address          Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            0000000000000000 000000 000000 00      0   0  0
+  [ 1] .note.gnu.property NOTE            0000000000400350 000350 000020 00   A  0   0  8
+  [ 2] .note.gnu.build-id NOTE            0000000000400370 000370 000024 00   A  0   0  4
+  [ 3] .interp           PROGBITS        0000000000400394 000394 00001c 00   A  0   0  1
+  [ 4] .gnu.hash         GNU_HASH        00000000004003b0 0003b0 00001c 00   A  5   0  8
+  [ 5] .dynsym           DYNSYM          00000000004003d0 0003d0 0000a8 18   A  6   1  8
+  [ 6] .dynstr           STRTAB          0000000000400478 000478 00005e 00   A  0   0  1
+  [ 7] .gnu.version      VERSYM          00000000004004d6 0004d6 00000e 02   A  5   0  2
+  [ 8] .gnu.version_r    VERNEED         00000000004004e8 0004e8 000030 00   A  6   1  8
+  [ 9] .rela.dyn         RELA            0000000000400518 000518 000030 18   A  5   0  8
+  [10] .rela.plt         RELA            0000000000400548 000548 000060 18  AI  5  23  8
+  [11] .init             PROGBITS        0000000000401000 001000 000017 00  AX  0   0  4
+  [12] .plt              PROGBITS        0000000000401020 001020 000050 10  AX  0   0 16
+  [13] .text             PROGBITS        0000000000401070 001070 000297 00  AX  0   0 16
+  [14] .fini             PROGBITS        0000000000401308 001308 000009 00  AX  0   0  4
+  [15] .rodata           PROGBITS        0000000000402000 002000 0000a1 00   A  0   0 16
+  [16] .eh_frame_hdr     PROGBITS        00000000004020a4 0020a4 00003c 00   A  0   0  4
+  [17] .eh_frame         PROGBITS        00000000004020e0 0020e0 0000e4 00   A  0   0  8
+  [18] .note.ABI-tag     NOTE            00000000004021c4 0021c4 000020 00   A  0   0  4
+  [19] .init_array       INIT_ARRAY      0000000000403df8 002df8 000008 08  WA  0   0  8
+  [20] .fini_array       FINI_ARRAY      0000000000403e00 002e00 000008 08  WA  0   0  8
+  [21] .dynamic          DYNAMIC         0000000000403e08 002e08 0001d0 10  WA  6   0  8
+  [22] .got              PROGBITS        0000000000403fd8 002fd8 000010 08  WA  0   0  8
+  [23] .got.plt          PROGBITS        0000000000403fe8 002fe8 000038 08  WA  0   0  8
+  [24] .data             PROGBITS        0000000000404020 003020 000010 00  WA  0   0  8
+  [25] .bss              NOBITS          0000000000404030 003030 000008 00  WA  0   0  1
+  [26] .comment          PROGBITS        0000000000000000 003030 00001f 01  MS  0   0  1
+  [27] .shstrtab         STRTAB          0000000000000000 00304f 000106 00      0   0  1
+
+===== readelf -d crackme_level2_stripped | NEEDED =====
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+
+===== nm crackme_level2_stripped (símbolos definidos en .text/.rodata) =====
+nm: crackme_level2_stripped: no symbols
+
+===== checksec manual (protecciones) =====
+crackme_level1: Type=EXEC (EXEC = sin PIE) | GNU_STACK flags=RW | RELRO segs=1 | stack canary=0
+crackme_level2: Type=EXEC (EXEC = sin PIE) | GNU_STACK flags=RW | RELRO segs=1 | stack canary=0
+crackme_level2_stripped: Type=EXEC (EXEC = sin PIE) | GNU_STACK flags=RW | RELRO segs=1 | stack canary=0

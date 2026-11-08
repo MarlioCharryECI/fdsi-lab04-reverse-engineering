@@ -1,0 +1,27 @@
+
+### SESION 2: longitud correcta (17) pero contenido incorrecto
+Breakpoint 1 at 0x4011d5: file /mnt/data/reverse_fsi_lab/crackme_level2.c, line 16.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, validate_key (candidate=0x7fffffff6eb0 'A' <repeats 17 times>) at /mnt/data/reverse_fsi_lab/crackme_level2.c:16
+warning: 16	/mnt/data/reverse_fsi_lab/crackme_level2.c: No such file or directory
+
+--- iteracion i=0: al=expected[0]^(input[0]^k[0]) -> se acumula con OR ---
+eax            0x7                 7
+0x7fffffff63b0:	0x0000000000000000
+Breakpoint 2 at 0x4011e7: file /mnt/data/reverse_fsi_lab/crackme_level2.c, line 18.
+
+Breakpoint 2, validate_key (candidate=0x7fffffff6eb0 'A' <repeats 17 times>) at /mnt/data/reverse_fsi_lab/crackme_level2.c:18
+18	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+
+--- fin del bucle: acumulador score [rbp-0x4] ---
+0x7fffffff63bc:	0x0000007f
+0x00000000004012d2 in main (argc=2, argv=0x7fffffff6508) at /mnt/data/reverse_fsi_lab/crackme_level2.c:36
+36	in /mnt/data/reverse_fsi_lab/crackme_level2.c
+Value returned is $1 = 0
+eax            0x0                 0
+=== FDSI CrackMe Level 2 ===
+Hint: static + dynamic analysis.
+Invalid license.
+[Inferior 1 (process 2629) exited with code 03]
